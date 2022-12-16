@@ -14,8 +14,23 @@
 
 
 </head>
-<body> 
-     
+<body onload="splash(3000)"> 
+    <div id="splashscreen" class="splashscreen">
+        <div class="load1">
+            <img src="images/mega-icon-logo.png" alt="">
+        </div>
+        <div class="load2" style="display: none;">     
+            <img src="images/mega-loader-dark.10067de1c8e7e26c.gif" class="splash-logo">
+            
+            <ul class="loading-info" >
+                <li class="step3">กำลังถอดรหัสลับ <i id="plus" class="far fa-spinner-third fa-spin"></i>  </li>
+                <li class="step2">กำลังรับข้อมูลบัญชี <i id="plus" class="far fa-spinner-third fa-spin"></i>  </li>
+                <li class="step1">กำลังร้องขอข้อมูลบัญชี <i id="plus" class="far fa-spinner-third fa-spin"></i>  </li> 
+            </ul>
+        </div>
+         
+    </div>
+
  
     <main>
         <section class="menu">
@@ -53,9 +68,10 @@
                     </li>
                 </ul>
             </div>
-            <div class="topbar-menu">
+            <!-- <div class="topbar-menu">
                 xxxx
-            </div>
+            </div> -->
+
             <div class="menu-right">
                 <i class="fal fa-times closex"></i>
             </div>
@@ -124,7 +140,57 @@
                     </ul>
                 </div>
             </div>
+
+            
+        
+            <div class="main-drive"> 
+                <div class="main-file">
+                    <a href="#">
+                        <div class="folder-box">
+                            <h4>a</h4>
+                        </div>
+                    </a> 
+                    <a href="#">
+                        <div class="folder-box">
+                            <h4>a</h4>
+                        </div>
+                    </a> 
+                    <a href="#">
+                        <div class="folder-box">
+                            <h4>a</h4>
+                        </div>
+                    </a> 
+                    <a href="#">
+                        <div class="folder-box">
+                            <h4>a</h4>
+                        </div>
+                    </a> 
+                    <a href="#">
+                        <div class="folder-box">
+                            <h4>a</h4>
+                        </div>
+                    </a> 
+                    <a href="#">
+                        <div class="folder-box">
+                            <h4>a</h4>
+                        </div>
+                    </a> 
+                    <a href="#">
+                        <div class="folder-box">
+                            <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, facere exercitationem. Magni assumenda aliquam labore excepturi ipsum minima iure voluptate voluptas nemo tempore, similique quidem corrupti itaque laborum quis cupiditate.</h4>
+                        </div>
+                    </a> 
+                    <a href="#">
+                        <div class="file-box">
+                            <img src="images/file_sysem_hero_2.webp" alt="file">
+                            <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, facere exercitationem. Magni assumenda aliquam labore excepturi ipsum minima iure voluptate voluptas nemo tempore, similique quidem corrupti it</h4>
+                        </div>
+                    </a>  
+                </div>
+            </div>
+    
         </section>
+
     </main>
 
 
@@ -135,6 +201,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>   
     
 	<script>
+
+
         $(".main-menu li").click(function(){  
             var data = $(this).attr("data-menu"); 
             $(".main-menu li").removeClass("active");
@@ -152,6 +220,36 @@
         $(".closex").click(function(){    
             $(".menu-right").removeClass("active"); 
         });
+
+
+        function splash(param) {
+
+            setTimeout(function () {
+                $('.load1').hide();
+                $('.load2').show();
+            }, 1000);
+
+            setTimeout(function () {
+                $('.step3 i').removeClass("fa-spinner-third fa-spin");
+                $('.step3 i').addClass("fa-check"); 
+            }, 1500);
+
+            setTimeout(function () {
+                $('.step2 i').removeClass("fa-spinner-third fa-spin");
+                $('.step2 i').addClass("fa-check"); 
+            }, 2000); 
+            setTimeout(function () {
+                $('.step1 i').removeClass("fa-spinner-third fa-spin");
+                $('.step1 i').addClass("fa-check"); 
+            }, 2500); 
+            
+            var time = param;
+            setTimeout(function () {
+                $('#splashscreen').hide();
+            }, time);
+          
+        }
+        
     </script>
     
 
